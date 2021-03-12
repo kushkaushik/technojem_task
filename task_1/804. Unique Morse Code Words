@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int uniqueMorseRepresentations(vector<string>& words) {
+        vector<string>temp{".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+       set<string>count; 
+        for(auto x:words){
+          string tp = "";
+            for(auto j:x)
+            {
+                tp+=temp[j-'a'];
+            }
+            count.insert(tp);
+        }
+        return count.size();
+    }
+};
